@@ -2,7 +2,7 @@ ALGORITHM Sommes_Des_Elemets_Qui_Se_Chevauchent
 VAR
      Jeu1:HASH_TABLE<CHAR,INTEGER>;
      Jeu2:HASH_TABLE<CHAR,INTEGER>;
-     i,nb:INTEGER;
+     i,nb,j:INTEGER;
      sommes:INTEGER:=0;
      str:STRING;
      count:INTEGER:=1;
@@ -24,9 +24,11 @@ BEGIN
     END_FOR
 
     FOR i FROM 0 TO str.lenght-1 STEP 1  DO
-        IF (Jeu1.get(str[i]) = Jeu2.get(str[i])) THEN
-            sommes:=Jeu1.get(str[i])+Jeu2.get(str[i]);
-        END_IF
+        FOR j FROM 0 TO str.lenght-1 STEP 1  DO
+            IF (Jeu1.get(str[i]) = Jeu2.get(str[j])) THEN
+                sommes:=Jeu1.get(str[i])+Jeu2.get(str[j]);
+            END_IF
+        END_FOR
     END_FOR
     Write(sommes);
 END
