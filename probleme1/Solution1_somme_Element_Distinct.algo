@@ -2,9 +2,25 @@ ALGORITHM Somme_Des_Elements_Distincts
 VAR
     sommes:INTEGER:=0;
     i:INTEGER;
+    j:INTEGER:=0;
+    nb:INTEGER;
     jeu1 : ARRAY_OF INTEGER[10];
     jeu2 : ARRAY_OF INTEGER[10];
 BEGIN
+    REPEAT
+        Write("Entrer un nombre")
+        Read(nb)
+        jeu1[j]:=nb;
+        j=j+1;
+    UNTIL (j<jeu1.lenght)
+
+    REPEAT
+        Write("Entrer un nombre")
+        Read(nb)
+        jeu2[j]:=nb;
+        j=j+1;
+    UNTIL (j<jeu2.lenght)
+
     FOR i FROM 0 TO jeu2.lenght-1 STEP 1  DO
         IF (jeu1[i] != jeu2[i]) THEN
             sommes:=jeu1[i]+jeu2[i];
