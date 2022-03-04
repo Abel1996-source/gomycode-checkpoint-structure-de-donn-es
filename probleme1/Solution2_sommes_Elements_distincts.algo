@@ -1,0 +1,32 @@
+ALGORITHM Somme_Des_Elements_Distincts
+VAR
+     Jeu1:HASH_TABLE<CHAR,INTEGER>;
+     Jeu2:HASH_TABLE<CHAR,INTEGER>;
+     i,nb:INTEGER;
+     sommes:INTEGER:=0;
+     str:STRING;
+     count:INTEGER:=1;
+
+BEGIN
+    Write("Entre une phrase ");
+    Read(str);
+    
+    FOR i FROM 0 TO str.lenght-1 STEP 1  DO
+        Write("Entrez un nombre quelconque !");
+        Read(nb);
+        Jeu1.insert(str[i],nb+count);
+    END_FOR
+
+    FOR i FROM 0 TO str.lenght-1 STEP 1  DO
+        Write("Entrez un nombre quelconque !");
+        Read(nb);
+        Jeu2.insert(str[i],nb+count);
+    END_FOR
+
+    FOR i FROM 0 TO str.lenght-1 STEP 1  DO
+        IF (Jeu1.get(str[i]) != Jeu2.get(str[i])) THEN
+            sommes:=Jeu1.get(str[i])+Jeu2.get(str[i]);
+        END_IF
+    END_FOR
+    Write(sommes);
+END

@@ -1,0 +1,21 @@
+ALGORITHM Sommes_Elements_Chevauchent
+VAR
+    size,i:INTEGER;
+    sommes:INTEGER:=0;
+    jeu1 : ARRAY_OF INTEGER[size];
+    jeu2 : ARRAY_OF INTEGER[size];
+BEGIN
+    Write("Entrez la taille des tables");
+    Read(size);
+    Write("Entrez un premier tableaux de taille ",size);
+    Read(jeu1);
+    Write("Entrez un deuxième tableaux de taille ",size);
+    Read(jeu2);
+
+    FOR i FROM 0 TO size-1 STEP 1  DO
+        IF (jeu1[i] != jeu2[2]) THEN
+           sommes:=jeu1[i]+jeu2[i]
+        END_IF
+    END_FOR
+    Write(sommes);
+END
