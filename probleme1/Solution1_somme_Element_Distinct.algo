@@ -7,6 +7,7 @@ VAR
     jeu1 : ARRAY_OF INTEGER[10];
     jeu2 : ARRAY_OF INTEGER[10];
 BEGIN
+
     REPEAT
         Write("Entrer un nombre")
         Read(nb)
