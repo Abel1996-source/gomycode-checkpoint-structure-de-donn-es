@@ -24,7 +24,7 @@ BEGIN
     UNTIL (j<jeu2.lenght)
 
     FOR i FROM 0 TO size-1 STEP 1  DO
-        IF (jeu1[i] != jeu2[i]) THEN
+        IF (jeu1[i] = jeu2[i]) THEN
            sommes:=jeu1[i]+jeu2[i]
         END_IF
     END_FOR
